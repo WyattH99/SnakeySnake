@@ -1,0 +1,19 @@
+
+
+
+Notes on ANSI Escape Characters
+
+    - Escape Characters start with: \e[
+    - Seperate the Modifiers with: ;
+    - Terminate with: m
+    - Reset with: \e[0m
+
+
+
+
+
+
+
+Good References:
+    - Wiki for Escape Characters (How they work and a list of them)
+        https://wiki.bash-hackers.org/scripting/terminalcodes

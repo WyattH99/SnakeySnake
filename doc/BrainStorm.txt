@@ -1,0 +1,54 @@
+
+
+This doc will serve as my thoughts as to how this Snake Game is going to work.
+
+This will be re-implementing the typical game of Snake.
+
+
+I want to be able to play the game of snake in the terminal.
+
+
+Interactive Text/Terminal Window
+I think that an interative text/terminal window would be cool.
+What this means is that everything that is displayed will be made with text.
+    Ex: 
+        A snake might look like this: ~~~~>
+        The direction of his head is the arrow.
+        Every piece of food the snake eats it grows by a "~"
+        Starting snake would look like: ~>
+        Walls should look like: # # #
+        Fruit would look like: @
+        
+    
+Movement will be done with the arrow keys or wasd
+
+
+
+List of Todos:
+    [] Figure out how to implement an interative terminal/window
+        https://hackernoon.com/building-reactive-terminal-interfaces-in-c-d392ce34e649
+        ANSI Escape Characters is the way to go with an interactive terminal it seems. 
+    [] Get window to popup
+    [] Display Game info to window
+    [] Implement the Game Class
+    [] Implement the Snake Class
+
+
+
+
+How a scene would look:
+# # # # # # # # # # # # # # # # # # # # # # #
+#                                           #
+#                                           #
+#                Welcome To                 #
+#                SnakeySnake                #
+#                                           #
+#                      ~~~~~~~>     @       #
+#                                           #
+#                                           #
+#                                           #
+#                                           #
+#                                           #
+#                                           #
+#                                           #
+# # # # # # # # # # # # # # # # # # # # # # #
