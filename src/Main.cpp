@@ -1,9 +1,9 @@
 
 // Includes and namespaces
 #include <iostream>
-#include "Game.h"
-#include "Board.h"
-#include "Snake.h"
+// #include "Game.h"
+// #include "Board.h"
+// #include "Snake.h"
 
 using namespace std;
 
