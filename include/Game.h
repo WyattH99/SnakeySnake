@@ -2,13 +2,17 @@
 #define GAME_H
 
 class Game{
-    // Private and Public Variables
+
     private:
+        int num;
+
 
     public:
+        Game();
+        Game(int num); // Constructor
+        void setNum(int n);
+        int getNum();
 
-    // Class Functions
-    
 };
 
 #endif

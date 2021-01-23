@@ -1,0 +1,21 @@
+{
+    "env": {
+        "myDefaultIncludePath": ["${workspaceFolder}", "${workspaceFolder}/include" ],
+        "myCompilerPath": "/usr/local/bin/gcc-10"
+    },
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${myDefaultIncludePath}"
+            ],
+            "defines": [],
+            "macFrameworkPath": ["/System/Library/Frameworks"],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}
