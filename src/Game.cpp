@@ -4,15 +4,21 @@
 // Implementations of the "Game" class functions
 
 // Constructor
-Game::Game():num(0) {}
+Game::Game():gameLoop(true), gameState(0){}
 
-Game::Game(int n): num(n) {}
+// Getters
+bool Game::get_gameLoop() {return gameLoop;}
 
-int Game::getNum(){
-    return num;
+int Game::get_gameState() {return gameState;}
+
+// Setters
+void Game::set_gameLoop(bool foo){
+    this->gameLoop = foo;
+    return;
 }
 
-void Game::setNum(int n){
-    num = n;
+void Game::set_gameState(int newState){
+    this->gameState = newState;
+    return;
 }
 
