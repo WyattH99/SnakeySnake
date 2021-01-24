@@ -26,7 +26,10 @@ int main(){
         switch(gamePtr->get_gameState()){
             // Menu : State 0
             case 0: 
-                // Display
+                // Display Menu
+                
+                // Take user input
+
 
             // Playing : State 1
             case 1:
