@@ -20,14 +20,18 @@ class Game{
     public:
         //Constructor
         Game();
+        void init(void); // Initializes everything and checks if color is possible
+        void finish(void); // Finishes game and cleans everything up
+        void checkKeyPress(); // Checks if esc key was pressed
+        
 
         // Getters
-        bool get_gameLoop();
-        int get_gameState();
+        bool get_gameLoop(){ return gameLoop;}
+        int get_gameState(){ return gameState;}
 
         // Setters
-        void set_gameLoop(bool foo);
-        void set_gameState(int newState);
+        void set_gameLoop(bool foo){ gameLoop = foo;}
+        void set_gameState(int newState){ gameState = newState;}
 
 };
 

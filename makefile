@@ -10,7 +10,7 @@ SRCEXT := cpp
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT)) # source code for the program
 OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o)) # these are the object files
 CFLAGS := -g # -Wall
-LIB :=  -L lib # Any outside libraries that are used are here
+LIB :=  -L lib -lncurses# Any outside libraries that are used are here
 INC := -I include # These are the .h files
 
 $(TARGET): $(OBJECTS)
