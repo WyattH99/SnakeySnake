@@ -1,7 +1,7 @@
 #ifndef BOARD_H
 #define BOARD_H
 
-#include <iostream>
+// #include <iostream>
 
 /*
     Board will keep track of the placements of walls, fruit, and snake
@@ -13,6 +13,8 @@ class Board{
     private:
     int width;
     int height;
+    class Snake* snake;
+    class Food* food;
 
     public:
     // Constructor
@@ -27,6 +29,8 @@ class Board{
     // Getters
     int get_width(){ return width;}
     int get_height(){ return height;}
+    class Snake* get_snake() {return snake;}
+    class Food* get_food() {return food;}
 
     // Setters
     void set_width(int foo){ width = foo;}

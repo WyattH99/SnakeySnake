@@ -1,0 +1,36 @@
+Examples of Using ncurses
+
+// Testing out ncurses
+initscr();                 /* Start curses mode     */
+keypad(stdscr, true);
+printw("Hello World !!!"); /* Print Hello World    */
+refresh();                 /* Print it on to the real screen */
+getch();                   /* Wait for user input */
+endwin();                  /* End curses mode    */
+    
+
+
+int ch;
+while(true){
+    if((ch = getch()) != ERR){
+        printw("User pressed a key: %d", game->get_gameState());
+    }
+}
+
+
+game->init();
+printw("Hello World !!!"); /* Print Hello World    */
+refresh();                 /* Print it on to the real screen */
+getch();                   /* Wait for user input */
+game->finish();
+
+
+int ch;
+while(true){
+    ch = getch();
+    if(ch != ERR && ch != 113){ // 113 is "q"
+        printw("User pressed a key: %d", ch);
+    }else if(ch == 113){
+        break;
+    }
+}

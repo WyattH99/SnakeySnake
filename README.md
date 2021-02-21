@@ -14,3 +14,7 @@ References Used:
     Example Snake Game
     - This was useful to get the game logic down correctly
     https://www.youtube.com/watch?v=tt5h-zF8dUI
+
+    Example Snake Game with Ncurses
+    - This example was very basic but was close to the base game using Ncurses
+    https://www.youtube.com/watch?v=4HgyStstIhw&list=PL2C01CC54638DD952&index=6

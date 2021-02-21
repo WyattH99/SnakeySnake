@@ -2,11 +2,8 @@
 #include "Game.h"
 #include <ncurses.h>
 #include <stdlib.h>
-// #include <panel.h>
-// #include <getopt.h>
-// #include <time.h>
-// #include <string.h>
-// #include <ctype.h>
+#include <cstdlib>
+#include <ctime>
 
 
 // Implementations of the "Game" class functions
@@ -16,13 +13,14 @@ Game::Game():gameLoop(true), gameState(0){}
 
 // Initializes everything and checks if color is possible
 void Game::init(void){
-    savetty();	// save terminal settings
+	srand(time(0));
+	savetty();	// save terminal settings
 	initscr();	// init ncurses screen
 	noecho();	// don't echo input to screen
 	curs_set(0);	// make cursor invisible
 	cbreak();	// don't wait for new line to grab user input
-	nodelay(stdscr, TRUE);	// force getch to be a non-blocking call
-    keypad(stdscr, TRUE); // enables special characters such as esc = 27
+	nodelay(stdscr, true);	// force getch to be a non-blocking call
+	keypad(stdscr, true); // enables special characters such as esc = 27
 
 	// if terminal has color capabilities, use them
 	if (has_colors()) {

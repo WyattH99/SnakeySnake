@@ -3,6 +3,8 @@
 #include <iostream>
 #include <ncurses.h>
 #include <stdlib.h>
+#include <cstdlib>
+#include <ctime>
 
 #include <sys/ioctl.h>
 #include <stdio.h>
@@ -11,6 +13,7 @@
 #include "../include/Game.h"
 #include "../include/Board.h"
 #include "../include/Snake.h"
+#include "../include/Food.h"
 
 using namespace std;
 
@@ -35,52 +38,51 @@ int main(int argc, char **argv){
 
     game->set_gameState(1);
 
-    printw("here");
-    cout << "here" << endl;
-
-    
-    // // Testing out ncurses
-    // initscr();                 /* Start curses mode     */
-    // keypad(stdscr, true);
-    // printw("Hello World !!!"); /* Print Hello World    */
-    // refresh();                 /* Print it on to the real screen */
-    // getch();                   /* Wait for user input */
-    // endwin();                  /* End curses mode    */
-    
-
-    
     // Game loop
     while(game->get_gameLoop()){
         
         // Figure out what state the game is in
         switch(game->get_gameState()){
             // Menu : State 0
-            case 0: 
+            case 0: {
                 // cout << "Menu" << endl;
                 board->drawMenu();
                 break;
+            }  
 
             // Playing : State 1
-            case 1:
-                // cout << "Board" << endl;
-                board->drawBoard();
-                game->checkKeyPress();
-                getch();
-                game->finish();
+            case 1: {
+                int ch;
+                while(true){
+                    
+                    ch = getch();
+                    if(ch != ERR && ch != 113){
+                        printw("Inside while loop: %d", ch);
+                        // addstr("Inside while loop: %d", ch);
+                        refresh();
+                    }else if(ch == 113){
+                        game->set_gameLoop(false);
+                        break;
+                    }
+                    board->drawBoard();
+                    refresh();
+                }
+                // 
+                // game->checkKeyPress();
+                // getch();
                 break;
-
+            }
+                
             // Endgame : State 2
-            case 2:
+            case 2: {
                 // cout << "Endgame" << endl;
                 board->drawEndgame();
                 break;
-
+            }
+                
         }
-        break;
     }
-    
-    
 
-
+    game->finish();
     return 0;
 }
