@@ -36,7 +36,7 @@ class Snake{
     // Getters
     char get_currentDirection() {return currentDirection;}
     bool get_gotFood() {return gotFood;}
-    std::vector<SnakePart> get_snake() {return snakeBody;}
+    std::vector<SnakePart> get_snakeBody() {return snakeBody;}
 
     // Setters
     void set_currentDirection(char newDirection) {currentDirection = newDirection;}

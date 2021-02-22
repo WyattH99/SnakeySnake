@@ -24,6 +24,7 @@ class Board{
     void setBoardSize(int widthNew, int heightNew);
     void drawMenu();
     void drawBoard();
+    void drawSnake();
     void drawEndgame();
 
     // Getters

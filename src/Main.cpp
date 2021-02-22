@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <cstdlib>
 #include <ctime>
+#include <string.h>
 
 #include <sys/ioctl.h>
 #include <stdio.h>
@@ -22,8 +23,7 @@ using namespace std;
 // Start of Program
 int main(int argc, char **argv){
     // cout << "\e[31m" << "Hello" << "\e[0m" << "World" << endl; // Testing ANSI Escape Codes
-
-
+    
     // Initialize the Game, Board, and Snake
     class Game* game = new class Game();
     class Board* board = new class Board();
@@ -45,7 +45,6 @@ int main(int argc, char **argv){
         switch(game->get_gameState()){
             // Menu : State 0
             case 0: {
-                // cout << "Menu" << endl;
                 board->drawMenu();
                 break;
             }  
@@ -57,7 +56,7 @@ int main(int argc, char **argv){
                     
                     ch = getch();
                     if(ch != ERR && ch != 113){
-                        printw("Inside while loop: %d", ch);
+                        // printw("Inside while loop: %d", board->get_snake()->get_snakeBody()[0].posX);
                         // addstr("Inside while loop: %d", ch);
                         refresh();
                     }else if(ch == 113){
@@ -65,9 +64,9 @@ int main(int argc, char **argv){
                         break;
                     }
                     board->drawBoard();
+                    board->drawSnake();
                     refresh();
                 }
-                // 
                 // game->checkKeyPress();
                 // getch();
                 break;
@@ -84,5 +83,6 @@ int main(int argc, char **argv){
     }
 
     game->finish();
+
     return 0;
 }

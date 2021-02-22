@@ -27,26 +27,24 @@ void Board::drawMenu(){
 }
 
 void Board::drawBoard(){
-
-
-    for(int i=0; i<height; i++){
-        printw("#");
-        for(int j=0; j<width-2; j++){
-            if(i==0 || i==height-1){
-                printw("#");
-            }else if(this->snake->checkSnakePosition(width, height)){
-                printw("@");
-            }else if(this->food->checkFoodPosition(width, height)){
-                printw("@");
-            }
-            else{
-                printw(" ");
-            }
-            
-        }
-        printw("#");
+    int col = 0;
+    int row = 0;
+    for(row=0; row<height; row++){ // scale y axis
+        mvprintw(row, 0, "#"); // print left
+        mvprintw(row, width-1, "#"); // print right
     }
-    // refresh();
+    for(col=1; col<width-1; col++){
+        mvprintw(0, col, "#"); // print top
+        mvprintw(height-1, col, "#"); // print bottom
+    }
+    
+}
+
+void Board::drawSnake(){
+    for(int i=0; i<this->snake->get_snakeBody().size(); i++){
+        mvprintw(this->snake->get_snakeBody()[i].posY, this->snake->get_snakeBody()[i].posX, "@");
+    }
+    return;
 }
 
 void Board::drawEndgame(){
