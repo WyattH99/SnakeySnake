@@ -12,8 +12,10 @@
 struct SnakePart{
     public:
     int posX, posY;
+    const char* body;
     SnakePart(); // Constructor
     SnakePart(int col, int row); // Constructor given X and Y
+    SnakePart(int col, int row, char direction); // Constructor given X and Y
 };
 
 class Snake{
@@ -29,8 +31,9 @@ class Snake{
     Snake(int col, int row); // Constructor given position of snake
 
     // Class Functions
-    void moveSnake();
+    void moveSnake(int input, class Food* food);
     bool collision();
+    void collisionFood(class Food* food);
     bool checkSnakePosition(int col, int row);
 
     // Getters

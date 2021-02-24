@@ -12,6 +12,7 @@
 class Food{
     private:
     int posX, posY;
+    const char* apple;
 
     public:
     Food(); // Constructor
@@ -23,6 +24,7 @@ class Food{
     // Getters
     int get_posX() {return posX;}
     int get_posY() {return posY;}
+    const char* get_apple() {return apple;}
 
     // Setters
     void set_posX(int X) {posX = X;}

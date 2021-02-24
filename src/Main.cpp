@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <string.h>
+#include <string>
 
 #include <sys/ioctl.h>
 #include <stdio.h>
@@ -53,28 +54,24 @@ int main(int argc, char **argv){
             case 1: {
                 int ch;
                 while(true){
-                    
+                    // Get keyboard input
                     ch = getch();
-                    if(ch != ERR && ch != 113){
-                        // printw("Inside while loop: %d", board->get_snake()->get_snakeBody()[0].posX);
-                        // addstr("Inside while loop: %d", ch);
-                        refresh();
-                    }else if(ch == 113){
+                    // Exit 'q'
+                    if(ch==113){
                         game->set_gameLoop(false);
                         break;
                     }
+                    board->get_snake()->moveSnake(ch, board->get_food());
                     board->drawBoard();
                     board->drawSnake();
+                    board->drawFood();
                     refresh();
                 }
-                // game->checkKeyPress();
-                // getch();
                 break;
             }
                 
             // Endgame : State 2
             case 2: {
-                // cout << "Endgame" << endl;
                 board->drawEndgame();
                 break;
             }

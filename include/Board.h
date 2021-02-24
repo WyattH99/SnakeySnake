@@ -25,6 +25,7 @@ class Board{
     void drawMenu();
     void drawBoard();
     void drawSnake();
+    void drawFood();
     void drawEndgame();
 
     // Getters
